@@ -77,7 +77,7 @@ cards.forEach((card, index) => {
                     }, 1500)
                 } else if (first[0] === second[0]) {
                     console.log('There we go!');
-                    if(cards.every(card=>card.classList.contains('clear'))) 
+                    // if(cards.every(card=>card.classList.contains('clear'))) 
                     first = [];
                     second = [];
                 }
