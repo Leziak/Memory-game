@@ -1,3 +1,9 @@
+// for (let i = 0; i < 32; i++) {
+//     document.querySelector('.container').innerHTML += `<div class="card"></div>`;
+// }
+
+
+
 let cards = document.querySelectorAll('.card');
 let arr = [
     '500px.svg',
@@ -32,7 +38,7 @@ let arr = [
     'itunes.svg',
     'adobe-fireworks.svg',
     'adobe-fireworks.svg',
-];
+]
 
 let first = [],
     second = [];
@@ -49,6 +55,8 @@ const shuffle = (array) => {
     }
     return array;
 }
+
+console.log(shuffle(arr))
 
 //The game itself
 cards.forEach((card, index) => {
@@ -69,16 +77,16 @@ cards.forEach((card, index) => {
                     }, 1500)
                 } else if (first[0] === second[0]) {
                     console.log('There we go!');
-                    if(cards.every(card=>card.classList.contains('clear'))) {
-                        alert('You win!')
-                    }
+                    if(cards.every(card=>card.classList.contains('clear'))) 
                     first = [];
                     second = [];
                 }
             }
         }
-    });
-});
+        console.log(first, second);
+        console.log(card.style.backgroundImage);
+    })
+})
 
 //New game
 document.querySelector('button').addEventListener('click', () => {
@@ -86,5 +94,5 @@ document.querySelector('button').addEventListener('click', () => {
     cards.forEach((card,index) => {
         card.classList.remove('clear');
         card.style.backgroundImage = `url("img/svg/${arr[index]}"`;
-    });
+    })
 })
